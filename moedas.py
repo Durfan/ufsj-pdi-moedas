@@ -126,7 +126,11 @@ if __name__ == '__main__':
 
     try:
         euro = sys.argv[2]
-        euro = True
+        if euro == 'euro':
+            euro = True
+        else:
+            print('Argumento não identificado. O argumento opcional para euros é "euro"')
+            euro = False
     except:
         euro = False
     
