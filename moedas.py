@@ -4,10 +4,10 @@ import numpy as np
 
 class ContagemMoedas:
     def __init__(self, image_path):
-            self.img = cv.imread(image_path)
-            self.moedas = 0
-            self.total_value = 0.00
-            self.diameters = []
+        self.img = cv.imread(image_path)
+        self.moedas = 0
+        self.total_value = 0.00
+        self.diameters = []
 
     def __get_background_color(self):
         region = (0, 10, 0, 10)
