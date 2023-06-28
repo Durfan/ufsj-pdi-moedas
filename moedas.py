@@ -1,3 +1,4 @@
+import os
 import argparse
 import cv2 as cv
 import numpy as np
@@ -140,10 +141,15 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
+    if (not os.path.isfile(args.path)):
+        print(f'Arquivo {args.path} não encontrado.')
+        exit(1)
+
     contagem = ContagemMoedas(args.path)
     contagem.run(args.moeda)
     total = contagem.get_total_value()
-    print(f'{total:.2f}')
+    total = f'{total:.2f}'.replace('.', ',')
+    print(f'{total}')
 
     if args.show:
         contagem.show_image()
